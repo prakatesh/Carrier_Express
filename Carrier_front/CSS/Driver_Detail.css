@@ -1,0 +1,30 @@
+.form1{
+    border: 2px outset black;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    margin-right: 200px;
+    margin-left: 200px; 
+    
+} 
+#btn{
+    margin-left:250px;
+}
+.gif-img{
+    width: 500px;
+}
+
+.card {
+    /* fallback for old browsers */
+    background: #a1c4fd;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
+}
+
+.gif-img{
+    width: 100%;
+}

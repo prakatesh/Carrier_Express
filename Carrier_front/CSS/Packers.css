@@ -1,0 +1,196 @@
+
+/* Nav-Bar */
+nav{
+    background-color: #000;
+    font-size: larger;
+}
+nav .Logo-name{
+    color: #fff;
+    margin: 5px;
+}
+
+.formimage{
+    margin-top: 50px;
+}
+
+.formimage img
+{
+    z-index: -10;
+    position: absolute;
+    margin-left: -1%;
+    width: 100%;
+    height:110%;
+}
+.card{
+    margin-top: 1%;
+    z-index: 1;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: white;
+    float: right;
+}
+.card
+{ 
+    padding: 4%;
+    margin-right: 5%;
+    /* background-image: linear-gradient(150deg, #ff0000,rgb(0, 0, 255)); */
+    background-image: linear-gradient(150deg, #8F00FF,#000);
+}
+.card input
+{
+    margin-top: 7%;
+    width: 300px;
+    height: 40px;
+}
+.card button
+{
+    margin-top: 7%;
+    padding: 5%;
+    width: 100%;
+    background-color: blueviolet;
+    color: aliceblue;
+    border-radius: 15px;
+}
+.card:hover{
+    scale: 20px;
+    transform:scale(1.05);
+    transition-duration: 0.7s;
+}
+.heading{
+    color: red;
+    text-align: center;
+}
+.moneysave img{
+    width: 17%;
+    margin-left: 45%;
+}
+.moneysave h3{
+    margin-left: 7%;
+    text-align: center;
+}
+.moneysave p{
+    margin-left: 15%;
+    text-align: center;
+}
+.img3{
+    margin-top: 3%;
+}
+.how1{
+    padding: 2%;
+    text-align: center;
+}
+.how{
+    color: #000;
+    background-color: red;
+}
+.how1 img{
+    width: 20%;
+}
+.how1 p{
+    margin-top: 4%;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.howheader h3{
+    margin-top: 700px;
+}
+table {
+    border:#000;
+    border-style: solid;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+table tr th{
+    background-color: rgba(255, 0, 0, 0.721);
+}
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+text-align: center;
+}
+
+tr:nth-child(odd) {
+background-color: #dddddd;
+}
+.chagre{
+margin-left: 5%;
+margin-top: 5%;
+}
+.chagre table{
+margin-top: 3%;
+}
+.chagre h5{
+    color:green;
+}
+.subhead p{
+margin-top: 1%;
+margin-bottom: 2%;
+}
+
+footer{
+text-align: center;
+margin-top: 4%;
+padding: 3%;
+background-color: black;
+color: white;
+}
+footer p{
+cursor: pointer;
+}
+footer h4{
+font-weight: bolder;
+margin-bottom: 5%;
+}
+.rel{
+margin-top: 2%;
+}
+.card select
+{
+margin-top: 7%; 
+width: 300px;
+height: 40px;
+}
+.bikedetail
+{
+text-align: center;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+border-radius: 5%;
+}
+.bikedetail img{
+margin-top: 5%;
+width: 80%;
+}
+.bikedetail h1{font-weight:bolder ;}
+.bikedetail p{
+font-size: large;
+padding-top: 1%;
+padding-bottom: 5%;
+color: rgb(6, 8, 24);
+}
+
+.bikedetail:hover{
+    scale: 20px;
+    transform:scale(1.05);
+    transition-duration: 0.7s;
+}
+
+.loc-icon{
+    margin-top: 21px;
+    height: 40px;
+}
+.friendly{
+    margin-top: 90px;
+}
+.vehicledetail{
+    margin-top: 700px;
+    z-index: 1;
+}
+
+.form-txt h1{
+    color: #fff;
+    padding-top: 5%;
+    padding-left: 20%;
+}

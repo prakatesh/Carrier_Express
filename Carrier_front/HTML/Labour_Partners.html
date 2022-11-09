@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../CSS/Labour_Partners.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Image/Header Logo/delivery-truck.png">
+    <title>Labour Partners</title>
+    <script src="https://kit.fontawesome.com/f8e52f3a02.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        function findit1() {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+                fetch(geoApiUrl)
+                    .then(res => res.json())
+                    .then(data => {
+                        document.getElementById('locationofuser').setAttribute("value", data.locality);
+                    })
+            });
+        }
+
+
+        function findit() {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+                fetch(geoApiUrl)
+                    .then(res => res.json())
+                    .then(data => {
+                        document.getElementById('locationofuser1').setAttribute("value", data.locality);
+                    })
+            });
+        }
+    </script>
+</head>
+
+
+<body>
+
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+    <img src="../Image/Header Logo/LOGO.png" alt="" width="40px" align="left">
+    <h4 class="Logo-name"style="color:white;">&nbsp;&nbsp;Carrier&nbsp;&nbsp;Express</h4>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <div class="navbar-toggler-icon"></div>
+    </button>
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+            <ul class="navbar-nav d-flex justify-content-end">
+                <li class="nav-item">
+                <a class="nav-link" href="Lab_Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="About.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="#">Driver/Labour Partners</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Track_Lab_Login.html">My Order</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Nav Bar End -->
+
+    <div class="formimage">
+        <video src="../Video/4k-video-2.mp4" autoplay loop muted width="100%"></video>
+        <div class="mapindia container-fluid"><br>
+            <div class="intro" style="text-align: center;"><i<b
+                        style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Times, serif; ">
+                        Become a
+                        Delivery Partner</i></b></div><br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="card bg-transparent" align="center">
+                            <div style="font-size: 25px;">Labour Login</div>
+                            <form class="needs-validation" method="post" action="../PHP/labour.php" novalidate>
+
+
+                                <div>
+                                    <input type="text" class="form-control text-log" id="validationCustom01" name="name_lab"
+                                        placeholder="Name" required>
+
+                                    <div class="invalid-feedback">
+                                        Please enter a Name.
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="text" class="form-control text-log" id="validationCustom01" name="mob_lab"
+                                        placeholder="Mobile Number" required>
+
+                                    <div class="invalid-feedback">
+                                        Please enter a Mobile Number.
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="locationofuser" placeholder="Location" name="location" required>
+                                    <span class="input-group-text loc-icon" style="cursor: pointer; cursor: pointer; margin-top: 20px;height: 41px;" onclick="findit1()">🔎</span>
+                                </div>
+
+                                <div>
+                                
+                                        <input type="Number" class="form-control text-log" id="validationCustom01" name="count_lab"
+                                            placeholder="Labour Count" required>
+    
+                                        <div class="invalid-feedback">
+                                            Please enter a valid number.
+                                        </div>
+                                    
+                                </div>
+
+                                <div>
+
+                                    <select class="form-select" id="validationCustom04" name="ava_lab" required>
+                                        <option selected disabled value="">Availability </option>
+                                        <option value="Part-Time">Part-Time</option>
+                                        <option value="Full-Time">Full-Time</option>
+                                    </select>
+
+                                    <div class="invalid-feedback">
+                                        Please select a valid time of availability.
+                                    </div>
+
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary" name="submitl"type="submit" align="center">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+
+                        <div class="container card c-2 bg-transparent" align="center" style="margin: top 20px ;">
+                            <div style="font-size: 25px;">Vehicle Owner Login</div>
+
+
+                            <form action="../PHP/veh_owner.php" method="post" class="needs-validation" novalidate>
+
+
+                                <div>
+                                    <input type="text" class="form-control text-log" id="validationCustom01" name="name_veh"
+                                        placeholder="Name" required>
+
+                                    <div class="invalid-feedback">
+                                        Please enter a Name.
+                                    </div>
+                                </div>
+
+                                <div>
+
+                                    <input type="text" class="form-control text-log" id="validationCustom01" name="mob_veh"
+                                        placeholder="Mobile Number" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please enter a Mobile Number.
+                                    </div>
+
+                                </div>
+
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="locationofuser1" placeholder="Location" name="location" required>
+                                    <span class="input-group-text loc-icon" style="cursor: pointer; margin-top: 20px;height: 41px;" onclick="findit()">🔎</span>
+                                </div>
+
+
+                                <div>
+                                    <select class="form-select" id="validationCustom04" name="cho_veh" required>
+                                        <option selected disabled value="">Choose the vehicle</option>
+                                        <option value="Bike">Bike</option>
+                                        <option value="3 wheeler Auto">3 wheeler Auto</option>
+                                        <option value="tata ace">tata ace</option>
+                                        <option value="Pickup">Pickup</option>
+                                        <option value="Tempo Truck">Tempo Truck</option>
+                                        <option value="6 Wheeler Truck">6 Wheeler Truck</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a valid city.
+                                    </div>
+                
+                                </div>
+
+
+                                <div>
+                                    <select class="form-select" id="validationCustom04" name="ava_veh" required>
+                                        <option selected disabled value="">Availability </option>
+                                        <option value="Part-Time">Part-Time</option>
+                                        <option value="Full-Time">Full-Time</option>
+                                    </select>
+
+                                    <div class="invalid-feedback">
+                                        Please select a valid time of availability.
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <input type="text" class="form-control" id="validationCustomUsername" name="reg_veh"
+                                        placeholder="Vehicle Register No.Eg:TN-01-A-0101" aria-describedby="inputGroupPrepend" required>
+                                    <div class="invalid-feedback">
+                                        Please Enter Vehicle Register Number.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary" name="submitv"
+                                     align="center">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="drive">
+        <div class="dtext"><br>
+            <h1>Why drive with us</h1><br>
+        </div>
+        <div class="texts">
+            <div class="container-fluid row ">
+                <div class="col-md-6">
+                    <p style="margin-left: 10%;" class="fa-solid fa-check h3"> </p><b class="h3">&nbsp; Regular Trips</b>
+                    <div class="dri_text">
+
+                        <p>With our growing presence across multiple cities, we always have our <br> hands full! This
+                            means you will
+                            never run out of trips.</p>
+                    </div>
+
+
+                    <p style="margin-left: 10%;" class="fa-solid fa-check h3"> </p><b class="h3">&nbsp;Better Earning</b>
+                    <div class="dri_text">
+
+                        <p>Earn more by partnering with the best! <br>Regular trips and efficient service can grow your
+                            earnings.
+                        </p>
+                    </div>
+
+
+                    <p style="margin-left: 10%;" class="fa-solid fa-check h3"> </p><b class="h3">&nbsp;On-time payment</b>
+                    <div class="dri_text">
+
+                        <p>Be assured to receive all payments on time & get the <br> best in class support, when you
+                            attach mini
+                            truck with LetsTransport.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="driving">
+                        <img src="../Image/Labour_Partners/why-drive-with-letstransport.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+
+    <div class="perks">
+
+        <center><h1>Perks</h1></center> <br>
+
+        <div class="container">
+            <div class="row top-buffer">
+                <div class="col">
+                    <img src="../Image/Labour_Partners/driver-perk-partner-support.svg" class="mx-auto d-block" alt="">
+                    <p>24x7 Partner Support</p>
+                </div>
+                <div class="col">
+                    <img src="../Image/Labour_Partners/driver-perk-driver-training.svg" class="mx-auto d-block" alt="">
+                    <p>Driver Traning</p>
+                </div>
+                <div class="col">
+                    <img src="../Image/Labour_Partners/driver-perk-personal-accident-coverage.svg" class="mx-auto d-block" alt="">
+                    <p>Personal Accident Coverage</p>
+                </div>
+            </div>
+            
+            <div class="row top-buffer">
+                <div class="col">
+                    <img src="../Image/Labour_Partners/insurance-icon-1.svg" class="mx-auto d-block" alt="">
+                    <p>24x7 Partner Support</p>
+                </div>
+                <div class="col">
+                    <img src="../Image/Labour_Partners/driver-perk-fuel-at-doorstep.svg" class="mx-auto d-block" alt="">
+                    <p>Driver Training</p>
+                </div>
+                <div class="col">
+                    <img src="../Image/Labour_Partners/driver-perks-vehicle-financing.svg" class="mx-auto d-block small" alt="">
+                    <p>Personal Accident Coverage</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="row">
+            <div class="col-md-3">
+                <h1 style="font-weight: bolder;">HEY SERVICE</h1>
+                <h3>Send anything, anywhere, anytime</h3>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <h4>Company</h4>
+                </div>
+                <div class="row">
+                    <p>About Us</p>
+                </div>
+                <div class="row">
+                    <p>Offers</p>
+                </div>
+                <div class="row">
+                    <p>Blogs</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <h4>Servics</h4>
+                </div>
+                <div class="row">
+                    <p>City Tempo</p>
+                </div>
+                <div class="row">
+                    <p>For Enterprise</p>
+                </div>
+                <div class="row">
+                    <p>Packers&Movers</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <h4>Support</h4>
+                </div>
+                <div class="row">
+                    <p>Contact Us</p>
+                </div>
+                <div class="row">
+                    <p>Privacy Policy</p>
+                </div>
+                <div class="row">
+                    <p>Terms of Service</p>
+                </div>
+            </div>
+        </div>
+        <div class="row rel">
+            <div class="col-md-3">
+                <div class="row">
+                    <h4 style="font-weight: bolder;">We are here</h4>
+                </div>
+                <div class="row">
+                    <p>Mumbai</p>
+                </div>
+                <div class="row">
+                    <p>Lucknow</p>
+                </div>
+                <div class="row">
+                    <p>Vadodra</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <p>Delhi NCR</p>
+                </div>
+                <div class="row">
+                    <p>Jaipur</p>
+                </div>
+                <div class="row">
+                    <p>Coimbatore</p>
+                </div>
+                <div class="row">
+                    <p>Salem</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <p>Bangalore</p>
+                </div>
+                <div class="row">
+                    <p>Pune</p>
+                </div>
+                <div class="row">
+                    <p>Indore</p>
+                </div>
+                <div class="row">
+                    <p>Hyderabad</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <p>Kolkata</p>
+                </div>
+                <div class="row">
+                    <p>Nagpur</p>
+                </div>
+                <div class="row">
+                    <p>Chennai</p>
+                </div>
+                <div class="row">
+                    <p>surat</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+
+
+</html>
+
+
+
+
+<!-- <input type="text" placeholder="Moving From"><br/>
+        <input type="text" placeholder="Moving To"><br/>
+        <input type="date" placeholder="Shift Date"><br/>-->
+
+
+
+<!--<div class="friendly">
+    <div class="heading">
+    <p> Be your own boss</p>
+</div><br><br>
+<div class="row img3">
+<div class="col-md-4 moneysave">
+    <img src="moneysave.jpg" alt="">
+    <h3>Budget friendly and affordable prices</h1>
+        <p>Moving made quick and easy with cheap prices</p>
+</div>
+<div class="col-md-4 moneysave">
+    <img src="saveimg.png" alt="">
+    <h3>Genuine packing to ensure safe movement</h1>
+        <p>Shift bike, luggage, furniture and electronics with reliable packaging</p>
+</div>
+<div class="col-md-4 moneysave">
+    <img src="dependon.jpg" alt="">
+    <h3>Get best quote according to your apartment size</h1>
+        <p>Transparent charges depending on the shifitng requirment. No hidden charges!</p>
+</div>
+</div>
+</div>-->

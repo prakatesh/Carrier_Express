@@ -1,0 +1,8 @@
+nav{
+    background-color: #000;
+    font-size: larger;
+}
+nav .Logo-name{
+    color: #fff;
+    margin: 5px;
+}

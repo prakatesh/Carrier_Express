@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/f8e52f3a02.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../CSS/Packers.css">
+    <script src="../JS/Packers.js"></script>
+    <!-- Title Icon -->
+    <link rel="icon" type="image/x-icon" href="../Image/Header Logo/delivery-truck.png">
+    <title>Packers & Movers</title>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <img src="..//Image/Header Logo/LOGO.png" alt="" width="40px" align="left">
+        <h4 class="Logo-name">&nbsp;&nbsp;Carrier&nbsp;&nbsp;Express</h4>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <div class="navbar-toggler-icon"></div>
+        </button>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+                <ul class="navbar-nav d-flex justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cus_Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Packers & Movers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Tracking_login.html">My Order</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- Nav Bar End -->
+    <div class="container-fluid formimage">
+        <img src="../Image/Packers/Banner.jpg" alt="">
+        <div class="card bg-transparent">
+            <div style="font-size: 25px; color: white; text-align: center;">Order Vehicle</div>
+            <form action="../PHP/order.php" method="post" class="needs-validation" novalidate>
+
+                <input type="text" class="form-control " id="validationCustom01" name="name_cus" placeholder="Enter Name" required>
+                <div class="invalid-feedback">
+                    Please enter a name.
+                </div>
+
+                <input type="text" class="form-control " id="validationCustom02" placeholder="Enter Mobile No." name="mob_cus"
+                    required>
+
+                <div class="invalid-feedback">
+                    Please enter a valid Mobile no.
+                </div>
+
+                
+                <div class="input-group">
+                    <input type="text" class="form-control" id="locationofuser" placeholder="Location" name="location" required>
+                    <span class="input-group-text loc-icon" style="cursor: pointer;" onclick="findit()">🔎</span>
+                </div>
+
+                <div>
+                    <input type="text" class="form-control " id="validationCustom02" placeholder="Approximate km" name="apox_cus" required>
+
+                    <div class="invalid-feedback">
+                        Please enter a valid valid Kilometer range.
+                    </div>
+
+                </div>
+
+                <div>
+                    <select class="form-select" id="validationCustom04" name="cho_veh_cus" required>
+                        <option selected disabled value="">Choose the vehicle</option>
+                        <option value="Bike">Bike</option>
+                        <option value="3 wheeler Auto">3 wheeler Auto</option>
+                        <option value="tata ace">tata ace</option>
+                        <option value="Pickup">Pickup</option>
+                        <option value="Tempo Truck">Tempo Truck</option>
+                        <option value="6 Wheeler Truck">6 Wheeler Truck</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid city.
+                    </div>
+
+                </div>
+
+
+                <div>
+                    <input type="number" name="cho_lab_cus" class="form-control " id="validationCustom05" placeholder="Labour count"
+                        required>
+
+                    <div class="invalid-feedback">
+                        Please enter a valid Kilometer range.
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <input name="date" type="date" class="form-control " id="validationCustom06" placeholder="Shift Date" required>
+
+                    <div class="invalid-feedback">
+                        Please enter a valid date.
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-12">
+                    <button class="btn btn-primary" name="Save" type="submit" align="center" onclick="validate_fun()">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="form-txt" align="left">
+            <h1><b style="color:rgb(37, 255, 3);">BOOK</b> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>YOUR </b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b style="color:chocolate;">VEHICLE</b></h1>
+            <!-- <img src="../Image/Packers/map.png" alt=""> -->
+        </div>
+    </div>
+    
+    <div class="vehicledetail container-fluid">
+        <div class="heading">
+            <h3 style="margin-top:50px;">Vehicle Details</h3>
+        </div><br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="bikedetail">
+                    <img src="../Image/Packers/bikedetail.png" alt="">
+                    <h1>Delivery Bike</h1>
+                    <p>Capacity : 50-70 kg<br>
+                        LabourNeed : 0<br>
+                        DistanceCover : 40-50 km<br>
+                        Purpose : Parcel service
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bikedetail">
+                    <img src="../Image/Packers/autovehicle.png" alt="">
+                    <h1>Three wheeler vehicle</h1>
+                    <p>Capacity : 100 - 300 kg<br>
+                        LabourNeed : 1 - 2<br>
+                        DistanceCover : 30 - 40 km<br>
+                        Purpose : Small Luggages
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bikedetail">
+                    <img style="width:63%;" src="../Image/Packers/3wvehicle.png" alt=""">
+                    <h1>Tata Ace</h1>
+                    <p>Capacity : 500 -1 ton<br>
+                    LabourNeed  : 2 - 3<br>
+                    DistanceCover : 60 - 70 km<br>
+                    Purpose : Home Shifting </p>
+                </div>
+            </div>
+        </div>
+        <div class=" row" style="margin-top:3%;">
+            <div class="col-md-4">
+                <div class="bikedetail">
+                    <img src="../Image/Packers/pickupve.png" alt="">
+                    <h1>PickUp</h1>
+                    <p>Capacity :3 - 5 ton<br>
+                        LabourNeed : 4 - 5<br>
+                        DistanceCover : 80 - 100 km<br>
+                        Purpose : Vegetable Shifting
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bikedetail">
+                    <img src="../Image/Packers/tempove.png" alt="">
+                    <h1>Tempo</h1>
+                    <p>Capacity : 5 - 6 ton<br>
+                        LabourNeed : 5 - 6<br>
+                        DistanceCover : 100 - 110 km<br>
+                        Purpose : Heavy Shifting
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bikedetail">
+                    <img style="width:75%;" src="../Image/Packers/6wvehicle.png" alt="">
+                    <h1>Six Wheeler vehicle</h1>
+                    <p>Capacity : 7 - 10 ton<br>
+                        LabourNeed : 7 - 10<br>
+                        DistanceCover : 100 - 200 km<br>
+                        Purpose : Bushiness purpose
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--   <div class="how container-fluid">
+        <div class="heading howheader">
+            <h3>Packers and Movers Work</h3>
+        </div>
+        <div class="row how1">
+            <div class="col-md-4">
+                <img src="../Image/Packers/sumbiticon.png" alt="">
+                <p>Submit details and book a slot</p>
+            </div>
+            <div class="col-md-4">
+                <img src="../Image/Packers/callcenter.png" alt="">
+                <p>Our executive will call you, confirm the item list and provide the best quote</p>
+            </div>
+            <div class="col-md-4">
+                <img src="../Image/Packers/delveryicon.png" alt="" style="height:90px; width: 100px;">
+                <p>Enjoy express, safe & hassle free shifting</p>
+            </div>
+        </div>
+    </div> -->
+    <div class="chagres">
+        <div class="chagre">
+            <center>
+                <div class="heading"> 
+                    <h3>Packers and Movers Charge</h3>
+                </div>
+                <div class="subhead">
+                    <p>Our packers and movers service starts at INR 1500, inclusive of transportation, packing, <br>
+                        and labour charges. Prices may vary depending on your apartment size, distance of shifting, <br>
+                        quantity of goods to be transported and locality you are residing in. Road tax,toll, parking
+                        etc. are not included in the fare.</p>
+                </div>
+                <h5>Charges are inclusive of labour charge, transportation charge & packing charge.</h5>
+                <table>
+                    <tr class="bg-success text-light">
+                        <th>SHIFTING TYPE</th>
+                        <th>STARTING FORM</th>
+                    </tr>
+                    <tr>
+                        <td>Upto 2 items</td>
+                        <td>Rs 1500</td>
+                    </tr>
+                    <tr>
+                        <td>1RK/Studio</td>
+                        <td>Rs 3500</td>
+                    </tr>
+                    <tr>
+                        <td>1BHK</td>
+                        <td>Rs 4700</td>
+                    </tr>
+                    <tr>
+                        <td>2BHK</td>
+                        <td>Rs 7800</td>
+                    </tr>
+                    <tr>
+                        <td>3BHK</td>
+                        <td>Rs 10800</td>
+                    </tr>
+                    <tr>
+                        <td>4BHK+</td>
+                        <td>Rs 14500</td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </div>
+    <div class="friendly container-fluid">
+        <div class="heading">
+            <h3> Book Reliable and Express house shifting services online</h3>
+        </div>
+        <div class="row img3">
+            <div class="col-md-4 moneysave">
+                <img src="../Image/Packers/moneysave.png" alt="">
+                <h3>Budget friendly and affordable prices</h1>
+                    <p>Moving made quick and easy with cheap prices</p>
+            </div>
+            <div class="col-md-4 moneysave">
+                <img src="../Image/Packers/saveimg.png" alt="">
+                <h3>Genuine packing to ensure safe movement</h1>
+                    <p>Shift bike, luggage, furniture and electronics with reliable packaging</p>
+            </div>
+            <div class="col-md-4 moneysave">
+                <img src="../Image/Packers/dependon.png" alt="">
+                <h3>Get best quote according to your apartment size</h1>
+                    <p>Transparent charges depending on the shifting requirement. No hidden charges!</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row container-fluid">
+            <div class="col-md-3">
+                <h1 style="font-weight: bolder;">HEY SERVICE</h1>
+                <h3>Send anything, anywhere, anytime</h3>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <h4>Company</h4>
+                </div>
+                <div class="row">
+                    <p>About Us</p>
+                </div>
+                <div class="row">
+                    <p>Offers</p>
+                </div>
+                <div class="row">
+                    <p>Blogs</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <h4>Servics</h4>
+                </div>
+                <div class="row">
+                    <p>City Tempo</p>
+                </div>
+                <div class="row">
+                    <p>For Enterprise</p>
+                </div>
+                <div class="row">
+                    <p>Packers&Movers</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <h4>Support</h4>
+                </div>
+                <div class="row">
+                    <p>Contact Us</p>
+                </div>
+                <div class="row">
+                    <p>Privacy Policy</p>
+                </div>
+                <div class="row">
+                    <p>Terms of Service</p>
+                </div>
+            </div>
+        </div>
+        <div class="row rel">
+            <div class="col-md-3">
+                <div class="row">
+                    <h4 style="font-weight: bolder;">We are here</h4>
+                </div>
+                <div class="row">
+                    <p>Mumbai</p>
+                </div>
+                <div class="row">
+                    <p>Lucknow</p>
+                </div>
+                <div class="row">
+                    <p>Vadodra</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <p>Delhi NCR</p>
+                </div>
+                <div class="row">
+                    <p>Jaipur</p>
+                </div>
+                <div class="row">
+                    <p>Coimbatore</p>
+                </div>
+                <div class="row">
+                    <p>Salem</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <p>Bangalore</p>
+                </div>
+                <div class="row">
+                    <p>Pune</p>
+                </div>
+                <div class="row">
+                    <p>Indore</p>
+                </div>
+                <div class="row">
+                    <p>Hyderabad</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <p>Kolkata</p>
+                </div>
+                <div class="row">
+                    <p>Nagpur</p>
+                </div>
+                <div class="row">
+                    <p>Chennai</p>
+                </div>
+                <div class="row">
+                    <p>surat</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

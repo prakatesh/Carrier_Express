@@ -1,0 +1,90 @@
+SANTHOSH KUMAR S 20CSR187
+	
+Sun, Nov 6, 4:16 PM (4 days ago)
+	
+to me
+<?php
+    $cust_id=$_POST['cust_id'];
+    $name_cus=$_POST['name_cus'];
+    $mob_cus=$_POST['mob_cus'];
+    include_once "../config/dbconnect.php";
+    $sql="SELECT * from order_det where cust_id=$ID";
+        $result=$conn-> query($sql);
+    
+?>
+
+<!--  above one is not working daa -->
+
+
+ 
+
+
+
+<form id="form">
+  <div class="field">
+    <label for="to_name">to_name</label>
+    <input type="text" name="to_name" value="<?php echo $name_cus ?>" id="to_name">
+  </div>
+  <div class="field">
+    <label for="owner_name">owner_name</label>
+    <input type="text" name="owner_name" value="<?php echo $row["name_veh"] ?>" id="owner_name">
+  </div>
+  <div class="field">
+    <label for="vechicle_num">vechicle_num</label>
+    <input type="text" name="vechicle_num" id="vechicle_num">
+  </div>
+  <div class="field">
+    <label for="phone_num">phone_num</label>
+    <input type="text" name="phone_num" id="phone_num">
+  </div>
+  <div class="field">
+    <label for="lab_name">lab_name</label>
+    <input type="text" name="lab_name" id="lab_name">
+  </div>
+  <div class="field">
+    <label for="lab_num">lab_num</label>
+    <input type="text" name="lab_num" id="lab_num">
+  </div>
+  <div class="field">
+    <label for="lab_count">lab_count</label>
+    <input type="text" name="lab_count" id="lab_count">
+  </div>
+  <div class="field">
+    <label for="from_name">from_name</label>
+    <input type="text" name="from_name" id="from_name">
+  </div>
+  <div class="field">
+    <label for="to_email">to_email</label>
+    <input type="text" name="to_email" id="to_email">
+  </div>
+
+  <input type="submit" id="button" value="Send Email" >
+</form>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('0n0qHz3z180dXiq3a')
+</script>
+<script>
+  const btn = document.getElementById('button');
+  document.getElementById('form')
+  .addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    btn.value = 'Sending...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_omlxoep';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btn.value = 'Send Email';
+        alert('Sent!');
+      }, (err) => {
+        btn.value = 'Send Email';
+        alert(JSON.stringify(err));
+      });
+  });
+</script>
